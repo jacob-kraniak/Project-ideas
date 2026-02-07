@@ -1,7 +1,7 @@
 # Project: Home Document Digitization and Searchable Archive System
 
 ## Origin
-- Grok conversation: [https://grok.com/c/ba827f08-8dbd-4b2b-b722-556c67828aac?rid=eb283d33-eef8-49ec-99e5-94ae8b3bee91]
+- Grok conversation: https://grok.com/c/ba827f08-8dbd-4b2b-b722-556c67828aac?rid=eb283d33-eef8-49ec-99e5-94ae8b3bee91
 - Date brainstormed: 2026-02-05
 - Tags: #automation #home-lab #privacy #ocr #search #python
 
