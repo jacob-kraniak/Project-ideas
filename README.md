@@ -11,15 +11,20 @@ I frequently use Grok to rapidly ideate practical tools, scripts, dashboards, se
 - **Track progress** toward implementation using GitHub Issues + Projects
 - **Build a public portfolio** of realized ideas over time (many will eventually graduate to their own repositories)
 
-## How Ideas Are Documented
+# Project Ideas Incubator
 
-Each idea lives in its own Markdown file in the `/ideas/` folder (or root for now).
+Collection of personal project concepts, proofs-of-concept, and brainstorms — mostly in **cybersecurity**, **home-lab**, **automation**, **EV infrastructure**, and **finance tooling**.
 
-**Naming convention**: `kebab-case-short-title.md`  
-Examples:
-- `personal-finance-tracker-poc.md`
-- `home-lab-threat-hunting-dashboard.md`
-- `ev-charging-cost-analyzer-long-island.md`
+## Current Structure
+
+- **Each idea lives in its own top-level folder** (no `/ideas/` wrapper anymore).
+- **Folder name**: `kebab-case-descriptive-title` (lowercase, hyphens, concise).
+- **Core file**: `README.md` inside each folder (problem, motivation, solution, tech stack, next steps).
+- Supporting files (code snippets, configs, diagrams, data samples) live alongside the README.
+
+Obsidian is configured as the primary editor — folders appear as clean note groups in the file explorer.
+
+Promising ideas can later be extracted into standalone repositories.
 
 **Drop-in Prompt Instructions**
 - https://github.com/jacob-kraniak/Project-ideas/blob/main/grok-brainstorm-prompt.md

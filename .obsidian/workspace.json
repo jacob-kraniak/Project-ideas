@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ideas/self-hosted-Personal-Finance-Dashboard.md",
-                "mode": "source",
-                "source": false
+                "file": "grok-brainstorm-prompt.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "self-hosted-Personal-Finance-Dashboard"
+              "title": "grok-brainstorm-prompt"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 375.5
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "47754c7c1cdd8c46",
@@ -179,10 +180,12 @@
   },
   "active": "a45dc59421d3a982",
   "lastOpenFiles": [
-    "ideas/self-hosted-Personal-Finance-Dashboard.md",
-    "ideas/Home-Document-Digitization-and-Searchable-Archive-System.md",
-    "grok-brainstorm-prompt.md",
     "README.md",
+    "grok-brainstorm-prompt.md",
+    "cyber-cert-progress-tracker.md",
+    "self-hosted-Personal-Finance-Dashboard.md",
+    "testfile.py.md",
+    "Home-Document-Digitization-and-Searchable-Archive-System.md",
     "prompt-output-template.md"
   ]
 }

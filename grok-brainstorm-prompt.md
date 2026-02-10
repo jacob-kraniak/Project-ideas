@@ -1,80 +1,76 @@
-Please summarize our entire conversation into a single, well-structured Markdown file ready to be committed to my GitHub repo https://github.com/jacob-kraniak/Project-ideas (ideally under /ideas/ folder, or directly in a dedicated repo if progressed far enough).
+# Grok Project Idea Folder Generator Prompt
 
-If you know the approximate or exact creation date of this Grok conversation (from the UI header like "Started on [date]" when viewing the shared link), use it for "Date conversation created". Otherwise, use today's date and note it as approximate.
+You are helping build/maintain my personal project incubator: https://github.com/jacob-kraniak/Project-ideas
 
-Use this exact template and fill it in completely and concisely based on everything we've discussed. If the conversation has progressed into development/implementation (e.g., code snippets shared, POCs built, milestones achieved), add sections for "Current Status", "Past Milestones", and "Recommendation for Repo Move" after Next Steps. Also, if relevant, append any supplementary text/code blocks at the end (e.g., scripts, configs, or notes from the discussion) in appropriate Markdown formatting like ```code blocks.
+**Current structure rule (Feb 2026+)**:
+- Each project idea MUST live in its **own folder at the repo ROOT** (no /ideas/ subfolder)
+- Folder name: **kebab-case**, lowercase, 3–7 words max, descriptive & unique
+  Examples: teslafi-charging-dashboard, personal-finance-tracker, home-lab-threat-hunting
+- Every folder **must** contain at least a `README.md`
+- Additional files (optional but encouraged): .py, .sh, .sql, .json, .md extras, small data files, PlantUML (.puml), etc.
+- **Strict escaping rule** — ALWAYS:
+  - Wrap inner markdown content in ```markdown\n...\n```
+  - Wrap code snippets in ```python\n...\n``` (or appropriate language)
+  - Use **four** backticks (````) if nesting triple-backtick blocks inside other blocks to prevent breaking
+  - Never place unescaped triple backticks inside any block
 
-Evaluate progress: If the idea is still in early brainstorming, keep it basic. If there's substantial progress (e.g., working code, tested POC), recommend moving to a dedicated repo and suggest a repo name/slug.
+When I say "generate X project ideas about <topic>" or "brainstorm <concept>", respond **ONLY** with the exact structured markdown format below.  
+**No introductory text, no explanations, no closing remarks** — just the block.
 
-Output ONLY the filled Markdown block—no extra commentary, explanations, or text outside the Markdown.
+```markdown
+## Idea 1 – Folder Name
+**folder-name**: kebab-case-folder-name
 
-# Project: [Give it a clear, descriptive title – 5-10 words max, title case]
+**one-liner**: One concise sentence summarizing the idea.
 
-## Origin
-- Grok conversation: [paste the direct full URL to this conversation]
-- Date conversation created: [exact or approx. initial date in YYYY-MM-DD; e.g., 2026-02-05 or approx. 2026-02-05 if from UI]
-- Date this summary generated: [today's date in YYYY-MM-DD]
-- Tags: #[tag1] #[tag2] #[tag3] #[tag4] #[tag5]  (choose 4–7 relevant tags like automation, home-lab, privacy, ocr, python, poc, security, dashboard, daily-life, etc.)
+**README.md content** (full markdown – use proper headings, lists, tables, code blocks; escape everything correctly):
+```markdown
+# Human-Readable Project Title
 
-## Problem / Goal
-[One short paragraph: What real-world problem, inefficiency, or opportunity are we trying to solve? Be specific about the pain point.]
+Catchy one-paragraph overview.
+
+## Problem / Motivation
+
+Detailed explanation...
 
 ## Proposed Solution
-[One short paragraph: High-level approach/architecture – main components, flow, and key privacy/security considerations if relevant.]
 
-## Tech Stack (planned)
-- Language(s): 
-- Core libraries / frameworks: 
-- Deployment target / environment: 
-- Data sources / integrations (if any): 
+High-level approach...
 
-## Key Features / Scope
-**Must-have:**
-- 
-- 
+## Tech Stack Suggestions
 
-**Nice-to-have / future:**
-- 
-- 
+- Bullet 1
+- Bullet 2
 
-## Challenges & Open Questions
-- 
-- 
+## Feasibility / Challenges
 
-## Next Steps
-- [ ] 
-- [ ] 
-- [ ] Create dedicated repo (when POC is validated)
+- Challenge 1
+- Challenge 2
 
-## Priority / Effort
-- Priority: [Low / Medium / High – or specific rationale, e.g., High (addresses ongoing document clutter)]
-- Estimated effort to minimal POC: [e.g., 1–2 weekends, 10–20 hours, etc.]
+## Next Steps / Milestones
 
-## Updates / Log
-- [YYYY-MM-DD]: Initial brainstorm with Grok – core concept defined
+1. First action
+2. Second action
 
-## GitHub Tracking
-- Issue: (create in repo and link here after commit, e.g. [#1](https://github.com/jacob-kraniak/Project-ideas/issues/1))
-- Project board card: (add to Grok Ideas Pipeline board and link here)
+**Additional files to suggest** (list with brief description of purpose/content, or "none"):
 
-[If progressed: Add these sections below]
+- poc.py → minimal proof-of-concept script using X library
+- queries.sql → example detection queries
+- architecture.puml → PlantUML source for diagram
 
-## Current Status
-[Short summary of where the project stands now, e.g., "POC script tested locally; basic OCR working but search indexing pending."]
+## Idea 2 – Folder Name
 
-## Past Milestones
-- [YYYY-MM-DD]: [Milestone description, e.g., "Initial OCR spike completed with 85% accuracy on sample docs."]
-- [YYYY-MM-DD]: [Another if applicable]
+(same structure as above – repeat full block)
 
-## Recommendation for Repo Move
-[Yes/No recommendation: e.g., "Yes – progress sufficient for dedicated repo. Suggested name: home-doc-archive-system (slug: home-doc-archive-system). Move MD file and any code to new repo at https://github.com/jacob-kraniak/home-doc-archive-system."]
+## Idea 3 – Folder Name
 
-[If relevant: Append supplementary content below, e.g.]
+(same structure as above – repeat full block)
 
-## Supplementary Code / Text
-### Example Script: ocr_test.py
-```python
-# Code from discussion
-import pytesseract
-from pdf2image import convert_from_path
-# ... full code here
+**Strict rules to follow**:
+- Folder names: lowercase, kebab-case only, unique, meaningful
+- README title: readable **Title Case** version of the idea
+- Bias toward cybersecurity, home-lab, automation, EV infrastructure, personal finance
+- When suggesting code/files, briefly describe content
+- **ALWAYS escape** inner markdown and code blocks properly (use `language... `)
+- If nesting blocks, use `markdown ... ` for outer if needed
+- Output **nothing** outside the top-level `markdown ... `block
