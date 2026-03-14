@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tesla Public Charging Dashboard/readme.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "readme"
+              "title": "README"
             }
           }
         ]
@@ -179,13 +179,14 @@
   },
   "active": "3c49047e3ece9ada",
   "lastOpenFiles": [
+    "Home-Document-Digitization-and-Searchable-Archive-System.md",
+    "Tesla Public Charging Dashboard/readme.md",
     "cyber-cert-progress-tracker.md",
     "grok-brainstorm-prompt.md",
     "Untitled.base",
     "README.md",
     "self-hosted-Personal-Finance-Dashboard.md",
     "testfile.py.md",
-    "Home-Document-Digitization-and-Searchable-Archive-System.md",
     "prompt-output-template.md"
   ]
 }
