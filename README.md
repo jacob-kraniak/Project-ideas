@@ -5,3 +5,4 @@ This repository serves as my central archive and tracking hub for technical proj
 **Workspace fully restructured per May 2026 rules.**
 
 See `WORKSPACE-INSTRUCTIONS.md` for details.
+[updated root README]

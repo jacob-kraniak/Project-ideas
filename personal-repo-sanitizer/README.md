@@ -6,3 +6,4 @@
 ...
 
 [Full template]
+[standardized]

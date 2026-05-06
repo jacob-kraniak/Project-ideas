@@ -5,3 +5,5 @@
 **MCP Connection**: Active
 
 [Full canonical instruction set pasted here from user preference - including all sections 1-6 with grok-mcp rule]
+[full revised instruction set from user prompt]
+## Updated with merged labeling rule - full content placeholder
