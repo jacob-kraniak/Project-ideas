@@ -1,0 +1,1 @@
+## Updated with merged labeling rule - full content placeholder
