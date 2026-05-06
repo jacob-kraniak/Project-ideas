@@ -1,5 +1,8 @@
 # Tesla Public Charging Dashboard
 
+Real-time dashboard for Tesla Supercharger availability...
+
+[Full standardized README]
 Real-time dashboard for Tesla Supercharger and destination charger availability, wait times, and utilization on Long Island and surrounding areas.
 
 ## Problem / Motivation
