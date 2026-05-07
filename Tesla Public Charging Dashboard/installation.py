@@ -1,5 +1,0 @@
-# Inside tesla-charging-dashboard/
-python -m venv .venv
-source .venv/bin/activate    # or .venv\Scripts\activate on Windows
-pip install -r requirements.txt
-cp .env.example .env         # then edit with your token
