@@ -1,0 +1,9 @@
+@startuml
+Title Family Breach Monitoring Architecture
+
+Actor User
+User -> Dashboard
+Dashboard -> Backend
+Backend -> HIBP_API
+Backend -> XposedOrNot
+@enduml
