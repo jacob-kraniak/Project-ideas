@@ -56,6 +56,60 @@ A long-standing goal is a **unified project/task tracking solution** that serves
 
 Fallback without full MCP: Plane has a solid REST API + webhooks; SuperProductivity can be driven via its plugin API or JSON export/import. Direct SQL against SP storage is possible but brittle.
 
+## Network Access & Exposure
+
+### Inside the LAN
+- Plane can be reached directly via the container/VM local IP + port.
+- Preferred: put a reverse proxy (Nginx Proxy Manager, Traefik, Caddy, etc.) in front and assign a clean internal hostname (`plane.home`, `tasks.local`, or similar) via router/AdGuard/Pi-hole/local DNS.
+- Reverse proxy also enables easy local HTTPS.
+- **DDNS is not required** for pure LAN access.
+
+### Outside the LAN
+- **VPN is the required approach** (WireGuard or Tailscale). Aligns with the existing home-network-security self-hosted services direction (prefer VPN, avoid direct public exposure).
+- Once connected to the VPN, family members use the exact same hostname/bookmark they use on the LAN.
+- Direct port-forward + public DDNS is technically possible but rejected for privacy/security reasons (family project data, contractor details, personal notes).
+- Tailscale is particularly low-friction for family devices (simple clients, MagicDNS).
+
+### Summary
+| Scenario              | Requirement                          | Notes                                      |
+|-----------------------|--------------------------------------|--------------------------------------------|
+| LAN access            | Local IP or internal DNS name        | Reverse proxy strongly preferred           |
+| Off-LAN access        | VPN (WireGuard / Tailscale) first    | No public ports for Plane                  |
+| Public exposure       | Not planned                          | Conflicts with privacy posture             |
+
+## Shared Account UX Workflow (Family Members)
+
+Goal: make day-to-day use as frictionless as possible for non-technical family members.
+
+### Desktop / PC experience
+- Plane is a modern web app. No client install required.
+- Create a browser bookmark (or pinned site / desktop shortcut) pointing at the internal hostname.
+- First visit: log in once. Browser keeps the session; subsequent visits are one-click.
+- Account creation options:
+  - Invite by email (requires SMTP configured on the Plane instance), or
+  - Create the user yourself via God Mode / instance admin and hand over a simple username + temporary password.
+- Limit visible projects so the sidebar stays sparse (one or two main family projects + Vendors page is ideal).
+
+### Roles for low friction
+- **Member** — can create and update work items in shared projects (recommended default for active family participants).
+- **Guest** (or project-level Commenter/Guest) — view + comment only if even less complexity is desired.
+- Jacob remains Workspace Owner/Admin.
+
+### Mobile
+- Official native iOS and Android apps exist and work with self-hosted instances, **but only on Commercial Edition** (including its free tier) from ~v1.12 onward.
+- **Community Edition does not support the native mobile apps.**
+- Fallback on Community: mobile browser (responsive UI) + “Add to Home Screen” for a PWA-style icon and fuller-screen experience.
+- Push notifications are currently Cloud-only even on Commercial.
+
+### Practical family setup checklist
+1. Deploy Plane behind reverse proxy with a clean internal hostname.
+2. Create the family workspace and seed 1–2 simple projects.
+3. Create/invite family accounts with Member (or Guest) roles and restricted project membership.
+4. Set bookmarks / home-screen icons on their devices.
+5. For any off-LAN use, require VPN connection first.
+
+This keeps the shared surface simple while still allowing rich project tracking when needed.
+
 ## Proposed Plane Workspace Structure (initial)
 
 **Workspace**: `Kraniak Family`
@@ -75,13 +129,14 @@ Roles: Jacob as admin; family members invited with appropriate project-level vis
 
 ### Phase 0 – Documentation & Decision (this document)
 - [x] Capture requirements and architecture from Grok discussion
+- [x] Document Network Access & Exposure and Shared Account UX Workflow
 - [ ] Confirm Proxmox host headroom and preferred deployment method (LXC vs VM)
 
 ### Phase 1 – Plane foundation
 - [ ] Deploy Plane Community Edition (Docker Compose) on Proxmox
-- [ ] Configure reverse proxy / HTTPS / VPN access as needed (align with existing WireGuard/Tailscale plans)
+- [ ] Configure reverse proxy + clean internal hostname + VPN access (align with existing WireGuard/Tailscale plans)
 - [ ] Create workspace, seed with 1–2 real projects (e.g. current renovation + Vendors)
-- [ ] Invite family members and validate visibility/roles
+- [ ] Create/invite family members with Member/Guest roles and validate visibility
 - [ ] Document API token + MCP server configuration for self-hosted instance
 
 ### Phase 2 – Personal layer + MCP
@@ -101,6 +156,7 @@ Roles: Jacob as admin; family members invited with appropriate project-level vis
 - Bi-directional or selective sync between SuperProductivity and Plane if desired
 - Deeper Obsidian / Actual Budget linking
 - Private voice assistant surface as Google Assistant replacement
+- Evaluate Commercial Edition if native mobile apps become a hard requirement
 
 ## Related Repositories & Systems
 - [Project-ideas](https://github.com/jacob-kraniak/Project-ideas) (this repo) – ideation source
@@ -114,9 +170,11 @@ Roles: Jacob as admin; family members invited with appropriate project-level vis
 - Whether to run Plane MCP server on the same host or on a daily driver machine
 - Priority order for first projects to seed (Bathroom vs others)
 - How aggressively to push existing Project-ideas items into Plane vs keeping them in GitHub longer
+- Community vs Commercial Edition (native mobile app requirement)
 
 ## Updates / Log
 - **2026-08-23**: Initial project plan documented from Grok conversation. Architecture preference locked around self-hosted Plane (family) + SuperProductivity (personal) + official/community MCP. No prior dedicated documentation found in jacob-kraniak repos.
+- **2026-08-23 (later)**: Added Network Access & Exposure section (LAN = reverse proxy + internal DNS preferred; off-LAN = VPN required; no public exposure). Added Shared Account UX Workflow section (bookmarks, roles, mobile notes for Community vs Commercial).
 
 ---
 
